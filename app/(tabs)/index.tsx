@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { useTheme } from "@/hooks/use-theme";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
+  const { toggleDarkMode } = useTheme();
+
   return (
     <View
       style={styles.container}
@@ -8,6 +11,11 @@ export default function Index() {
       <Text style={styles.content}>
         This is the Todos screen
       </Text>
+      <TouchableOpacity onPress={toggleDarkMode}>
+        <Text>
+          Toggle Theme
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
